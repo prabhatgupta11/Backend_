@@ -10,7 +10,7 @@ app.use("/api",pollRouter)
 app.use("/userApi",userRouter)
 
 db.sequelize.sync().then(()=>{
-    app.listen(process.env.PORT,()=>{
+    app.listen(process.env.PORT || 4500,()=>{
         console.log(`Server is running at ${process.env.PORT}`)
     }); 
 });
